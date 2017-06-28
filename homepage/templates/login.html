@@ -6,7 +6,8 @@
 <body>
 	<h1>Silahkan Untuk Login</h1>
 	<form action="/login/" method="POST">
-		{% crsf_token %}
+		<!-- {{ crsf_token }} -->
+		{% csrf_token %}
 		
 		{% if messages %}
 			<ul>

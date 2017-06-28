@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, logout, login
-from django.contrib import message
+from django.contrib import messages
 
 from karyawan.models import Akun, Karyawan
 
@@ -19,7 +19,7 @@ def login_view(request):
 					akun = Akun.objects.get(akun=user.id)
 					login(request, user)
 
-					request.session['karyawan_id'] = akun.karyawan_id
+					request.session['karyawan_id'] = akun.karyawan.id
 					request.session['jenis_akun'] = akun.jenis_akun
 					request.session['username'] = request.POST['username']
 				except:
