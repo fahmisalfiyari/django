@@ -25,5 +25,6 @@ urlpatterns = [
     url(r'^$', karyawan_views.profil),
     url(r'^login/', homepage_views.login_view),
     url(r'^logout/', homepage_views.logout_view),
-    # url(r'^daftar_hadir', kehadiran_views.daftar_hadir),
+    url(r'^daftar_hadir', kehadiran_views.daftar_hadir),
+    url(r'^/', homepage_views.login_view),
 ]
